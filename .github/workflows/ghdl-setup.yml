@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get update
-          sudo apt-get install ghdl
+          sudo apt-get install ghdl ghdl-common
           git clone https://github.com/UVVM/UVVM_Light.git uvvm_light
           cd uvvm_light
           mkdir build
