@@ -32,7 +32,7 @@ jobs:
           sudo apt-get install ghdl
           git clone https://github.com/UVVM/UVVM_Light.git uvvm_light
           cd uvvm_light
-          mkdir uvvm_light/build
+          mkdir build
           export GHDL_FLAGS="--std=08 -frelaxed --workdir=uvvm_light/build --work=uvvm_util"
           ghdl -a $GHDL_FLAGS src_util/types_pkg.vhd
           ghdl -a $GHDL_FLAGS src_util/adaptations_pkg.vhd
