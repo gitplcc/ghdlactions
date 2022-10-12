@@ -30,8 +30,31 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install ghdl
-          git clone https://github.com/UVVM/UVVM.git
-          pwd
-          ls
+          git clone https://github.com/UVVM/UVVM_Light.git /usr/local/lib/ghdl/src/uvvm_light
+          cd uvvm_light
+          sudo mkdir /usr/local/lib/ghdl/uvvm_light
+          export GHDL_FLAGS="--std=08 -frelaxed --workdir=/usr/local/lib/ghdl/uvvm_light --work=uvvm_util"
+          sudo ghdl -a $GHDL_FLAGS src_util/types_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/adaptations_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/string_methods_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/protected_types_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/global_signals_and_shared_variables_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/hierarchy_linked_list_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/alert_hierarchy_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/license_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/methods_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/bfm_common_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_util/uvvm_util_context.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/avalon_mm_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/avalon_st_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/axilite_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/axistream_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/gmii_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/gpio_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/i2c_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/rgmii_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/sbi_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/spi_bfm_pkg.vhd
+          sudo ghdl -a $GHDL_FLAGS src_bfm/uart_bfm_pkg.vhd
           echo Add other actions to build,
           echo test, and deploy your project.
