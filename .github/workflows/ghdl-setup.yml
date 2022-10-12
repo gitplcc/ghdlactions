@@ -41,6 +41,6 @@ jobs:
           git clone https://github.com/UVVM/UVVM_Light.git uvvm_light
           mkdir uvvm_light/build
           cd uvvm_light/build
-          $GITHUB_WORKSPACE/uvvm_light/script/compile.sh ..
+          . $GITHUB_WORKSPACE/uvvm_light/script/compile.sh ..
           echo Add other actions to build,
           echo test, and deploy your project.
