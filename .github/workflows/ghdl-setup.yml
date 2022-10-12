@@ -39,30 +39,8 @@ jobs:
           sudo make install
           cd ../..
           git clone https://github.com/UVVM/UVVM_Light.git uvvm_light
-          cd uvvm_light
-          mkdir build
-          export GHDL_FLAGS="--std=08 -frelaxed --workdir=build --work=uvvm_util"
-          ghdl -a $GHDL_FLAGS src_util/types_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/adaptations_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/string_methods_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/protected_types_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/global_signals_and_shared_variables_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/hierarchy_linked_list_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/alert_hierarchy_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/license_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/methods_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/bfm_common_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_util/uvvm_util_context.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/avalon_mm_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/avalon_st_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/axilite_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/axistream_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/gmii_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/gpio_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/i2c_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/rgmii_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/sbi_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/spi_bfm_pkg.vhd
-          ghdl -a $GHDL_FLAGS src_bfm/uart_bfm_pkg.vhd
+          mkdir uvvm_light/build
+          cd uvvm_light/build
+          ../script/compile.sh ..
           echo Add other actions to build,
           echo test, and deploy your project.
