@@ -31,5 +31,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install ghdl
           git clone https://github.com/UVVM/UVVM.git
+          pwd
+          ls
           echo Add other actions to build,
           echo test, and deploy your project.
