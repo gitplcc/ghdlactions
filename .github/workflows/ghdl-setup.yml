@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get update
-          apt-get install -y gcc-10 gnat-10 make zlib1g-dev
+          sudo apt-get install -y gcc-10 gnat-10 make zlib1g-dev
           git clone https://github.com/ghdl/ghdl.git
           mkdir ghdl/build
           cd ghdl/build
